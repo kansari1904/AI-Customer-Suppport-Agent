@@ -14,7 +14,7 @@ loader = DirectoryLoader(
 
 docs = loader.load()
 
-print(f"Documents loaded: {len(docs)}")
+# print(f"Documents loaded: {len(docs)}")
 
 
 # 2. Split documents into chunks
@@ -25,19 +25,19 @@ text_splitter = RecursiveCharacterTextSplitter(
 
 chunks = text_splitter.split_documents(docs)
 
-print(f"Chunks created: {len(chunks)}")
+# print(f"Chunks created: {len(chunks)}")
 
 
 # 3. Check metadata
-print("\nFirst document metadata:")
-print(docs[0].metadata)
+# print("\nFirst document metadata:")
+# print(docs[0].metadata)
 
 
 # 4. Inspect first few chunks
-for i, chunk in enumerate(chunks[:3]):
-    print(f"\n--- CHUNK {i + 1} ---")
-    print(chunk.page_content)
-    print("SOURCE:", chunk.metadata.get("source"))
+# for i, chunk in enumerate(chunks[:3]):
+#     print(f"\n--- CHUNK {i + 1} ---")
+#     print(chunk.page_content)
+#     print("SOURCE:", chunk.metadata.get("source"))
 
 
 # 5. Create embeddings
@@ -47,7 +47,7 @@ embedding = HuggingFaceEmbeddings(
     model_name="sentence-transformers/all-MiniLM-L6-v2"
 )
 
-print("Embedding model loaded.")
+# print("Embedding model loaded.")
 
 
 # 6. Store embeddings in Chroma
